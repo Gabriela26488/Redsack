@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedSack</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+ 
+<body class="bg-light body">
+
+  <header class="container-fluid vw-100 d-flex bg-dark">
+    <h1
+      class="text-light fw-bold col-lg-4 col-md-8 col-sm-6 col-5 d-flex justify-content-center align-items-center titulos">
+      RedSack
+    </h1>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark col-lg-8 col-md-4 col-sm-6 col-7 text-center">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active fs-4" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="" data-bs-toggle="modal" data-bs-target="#inventario-modal">Inventario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="" data-bs-toggle="modal" data-bs-target="#agregar-modal">Agregar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="#contactos">Contactos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container-fluid">
+
+    <section class="d-flex flex-wrap flex-lg-nowrap container-fluid min-vh-100 pb-5 pt-5 mb-5">
+      <div class="d-flex flex-column justify-content-center h-100 col-lg-7 col-12 mb-5 mb-sm-0">
+        <h1 class="display-1 fw-bold mb-5 col-10 ">
+          Administra los Recursos de tu Empresa, en la <span class="text-primary titulos">RedSack</span>
+        </h1>
+        <p class="fs-3 text-secondary fw-bold col-9 mb-4">
+          Te ofrecemos un sistema de gestión de inventario fácil de usar, para controlar todos tus bienes, materiales,
+          recursos, entre otros, de tu empresa
+        </p>
+        <div class="d-flex gap-4 align-items-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregar-modal"
+            id="a-agregar-modal">¡Comienza
+            Ya!</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#inventario-modal">Consulta...</button>
+        </div>
+      </div>
+
+      <div class=" col-lg-5 col-12 lg-vh-100 d-flex justify-content-center align-items-center">
+        <img class="img-fluid" src="public/Logo.png" alt="Imagen de muestra">
+      </div>
+    </section>
+
+    <section class="container-fluid" id="contactos">
+      <h2 class="text-center display-4 fw-bold text-primary mb-5">
+        CONTÁCTANOS
+      </h2>
+      <div class="container-fluid d-flex flex-wrap justify-content-center">
+
+        <div
+          class="d-flex flex-column col-12 col-md-6 col-xl-3 justify-content-center gap-3 text-center align-items-center p-4">
+          <h3 class="fw-bold fs-3">Gabriela Fernández</h3>
+          <img src="public/Gabriela.jpg" class="img-thumbnail rounded-circle border-secondary" alt="..."
+            style="height: 200px; width: 200px;">
+          <a class="fs-5 nav-link text-primary titulos" href="https://github.com/Gabriela26488"><b>Desarrolladora</b></a>
+        </div>
+
+        <div
+          class="d-flex flex-column col-12 col-md-6 col-xl-3 justify-content-center gap-3 text-center align-items-center p-4">
+          <h3 class="fw-bold fs-3">Facultad de Ingeniería</h3>
+          <img src="public/uvm.png" class="img-thumbnail rounded-circle border-secondary" alt="..."
+            style="height: 200px; width: 200px;">
+          <a class="fs-5 nav-link text-primary titulos" href="https://uvm.edu.ve/"><b>Universidad Valle del Momboy</b></a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Modal Inventario-->
+    <section class="modal fade modal-xl" id="inventario-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-lg-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="text-center text-dark p-3 modal-title">Inventario</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000000">
+                  <h1 class="text-center text-dark p-3 mb-3">Productos</h1>
+                  <div class="container p-3 bg-cyan border border-3 border-dark rounded-3 bg-white">
+                    <div class="container-fluid mb-4 col-12 gap-4">
+                      <div class="mt-4">
+                        <label for="formFile" class="form-label">Importar Respaldos del Inventario (Productos y
+                          Categorías)</label>
+                        <input class="form-control" type="file" id="formFile" accept="application/json">
+                      </div>
+                    </div>
+                    <div id="tabla-productos"></div>
+                    <div id="alerta-container-inventario-producto"></div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <h1 class="text-center text-dark p-3 mb-3" data-bs-interval="10000000">Categorías</h1>
+
+                  <div class="container p-3 bg-cyan border border-3 border-dark rounded-3 bg-white">
+                    <div id="tabla-categorias"></div>
+                    <div id="alerta-container-inventario-categoria"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">Cambiar Inventario</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Agregar-->
+    <section class="modal fade modal-xl " id="agregar-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="text-center text-dark p-3 modal-title">Agregar</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container p-3 bg-$cyan border border-3 border-dark rounded-3 bg-white mb-4">
+
+              <div id="formularios" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <form class="row g-3 p-4" id="formulario-producto" novalidate>
+                      <div id="alerta-container-agregar-producto"></div>
+                      <h2 class="text-dark text-center">Productos</h2>
+                      <div class="col-md-6">
+                        <label for="nombre-producto" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre-producto"
+                          placeholder="Nombre del Producto..." required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa un nombre válido.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div id="lista-categorias"></div>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una categoría válida.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="presentacion" class="form-label">Presentación</label>
+                        <input type="text" class="form-control" id="presentacion" placeholder="Ejemplo: 500ml" required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una presentación válida.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea type="text" class="form-control" id="descripcion" placeholder="Descripción..."
+                          required></textarea>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una descripción válida.
+                        </div>
+                      </div>
+                      <div class="col-xl-6 col-md-8">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" min="0" class="form-control" id="precio" placeholder="0" required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa un precio válido.
+                        </div>
+                      </div>
+                      <div class="col-xl-4 col-md-4">
+                        <label for="moneda" class="form-label">Moneda</label>
+                        <select id="moneda" class="form-select" required>
+                          <option selected disabled value="">Seleccione una opción</option>
+                          <option>$</option>
+                          <option>Bs</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Por favor, selecciona una moneda válida.
+                        </div>
+                      </div>
+                      <div class="col-xl-2 col-md-12">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" min="0" class="form-control" id="cantidad" placeholder="0" required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una cantidad válida.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                      </div>
+                    </form>
+                  </div>
+
+                  <div class="carousel-item">
+                    <form class="row g-3 p-4" id="formulario-categoria" novalidate>
+                      <div id="alerta-container-agregar-categoria"></div>
+                      <h2 class="text-dark text-center">Categorías</h2>
+                      <div class="col-md-6">
+                        <label for="nombre-categoria" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre-categoria" placeholder="Ingrese el Nombre"
+                          required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa un nombre válido.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="proveedor" class="form-label">Proveedor</label>
+                        <input type="text" class="form-control" id="proveedor" placeholder="Ejemplo: Samsung" required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa un proveedor válido.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="calidad" class="form-label">Calidad</label>
+                        <input type="text" class="form-control" id="calidad" placeholder="Calidad de los productos..."
+                          required>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una calidad válida.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="descripcion-categoria" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion-categoria" placeholder="Descripción..."
+                          required></textarea>
+                        <div class="invalid-feedback">
+                          Por favor, ingresa una descripción válida.
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-target="#formularios"
+                data-bs-slide="next">Cambiar Formulario</button>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+
+
+
+
+  <!-- Modal Editar Producto -->
+  <div class="modal fade" id="modalEditarProducto" tabindex="-1" role="dialog" aria-labelledby="modalEditarLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-lg-down" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="modalEditarLabel">Editar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container p-3 bg-$cyan border border-3 border-dark rounded-3 bg-white mb-4">
+            <!-- Formulario Editar Producto-->
+            <form class="row g-3 p-4" id="formulario-editar-producto" novalidate>
+              <h2 class="text-dark text-center">Producto</h2>
+              <div class="col-md-6">
+                <label for="nombre-producto-editar" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre-producto-editar" placeholder="Nombre del Producto..."
+                  required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa un nombre válido.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="lista-categorias2"></div>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una categoría válida.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="presentacion-editar" class="form-label">Presentación</label>
+                <input type="text" class="form-control" id="presentacion-editar" placeholder="Ejemplo: 500ml" required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una presentación válida.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="descripcion-editar" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion-editar" placeholder="Descripción..." required></textarea>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una descripción válida.
+                </div>
+              </div>
+              <div class="col-xl-6 col-md-8">
+                <label for="precio-editar" class="form-label">Precio</label>
+                <input type="number" min="0" class="form-control" id="precio-editar" placeholder="0" required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa un precio válido.
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-4">
+                <label for="moneda-editar" class="form-label">Moneda</label>
+                <select class="form-select" id="moneda-editar" required>
+                  <option selected disabled value="">Seleccione una opción</option>
+                  <option>$</option>
+                  <option>Bs</option>
+                </select>
+                <div class="invalid-feedback">
+                  Por favor, selecciona una moneda válida.
+                </div>
+              </div>
+              <div class="col-xl-2 col-md-12">
+                <label for="cantidad-editar" class="form-label">Cantidad</label>
+                <input type="number" min="0" class="form-control" id="cantidad-editar" placeholder="0" required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una cantidad válida.
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-secondary">Guardar Cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Editar Categoria -->
+  <div class="modal fade" id="modalEditarCategoria" tabindex="-1" role="dialog"
+    aria-labelledby="modalEditarCategoriaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-lg-down" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="modalCategoriaEditarLabel">Editar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container p-3 bg-$cyan border border-3 border-dark rounded-3 bg-white mb-4">
+            <!-- Formulario Editar Categoría -->
+            <form class="row g-3 p-4" id="formulario-editar-categoria" novalidate>
+              <h2 class="text-dark text-center">Categoría</h2>
+              <div class="col-md-6">
+                <label for="nombre-categoria-editar" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre-categoria-editar" placeholder="Ingrese el Nombre"
+                  required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa un nombre válido.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="proveedor-editar" class="form-label">Proveedor</label>
+                <input type="text" class="form-control" id="proveedor-editar" placeholder="Ejemplo: Samsung" required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa un proveedor válido.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="calidad-editar" class="form-label">Calidad</label>
+                <input type="text" class="form-control" id="calidad-editar" placeholder="Calidad de los productos..."
+                  required>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una calidad válida.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="descripcion-categoria-editar" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion-categoria-editar" placeholder="Descripción..."
+                  required></textarea>
+                <div class="invalid-feedback">
+                  Por favor, ingresa una descripción válida.
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              </div>
+            </form>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="w-100 bg-dark p-4 ">
+    <p class="fs-4 tw-bold text-center m-0 text-light">Front End II Copyright © 02/10/2023 | Derechos reservados para
+      RedSack |
+      Visita el repositorio del Proyecto <a href="#">Aquí</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
