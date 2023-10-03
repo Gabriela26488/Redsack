@@ -4,6 +4,7 @@ import tablaCategoria from "./components/categorias.js";
 import listasCategorias from "./components/listaCategorias.js";
 import accionBotonEliminar from "./classes/BotonEliminar.js";
 import accionBotonEditar from "./classes/BotonEditar.js";
+import accionBotonBuscar from "./classes/BotonBuscar.js";
 import backup from "./classes/backup.js";
 
 const d = document;
@@ -38,6 +39,8 @@ formularioEditarProducto.addEventListener("submit", formulario.editarProducto);
 // Editar una categoria con los datos obtenidos del formulario
 const formularioEditarCategoria = d.getElementById("formulario-editar-categoria");
 formularioEditarCategoria.addEventListener("submit", formulario.editarCategoria);
+
+d.getElementById("tabla-productos").addEventListener("click", accionBotonBuscar.buscarProducto);
 
 // Exportar datos del inventario
 d.getElementById("tabla-productos").addEventListener("click", backup.exportarDatos);
